@@ -1,0 +1,49 @@
+<div class="Main">
+    <form [formGroup]="loginForm" (ngSubmit)="userLogin()">
+    <div class="login">
+    <div class="text"><h1>Login</h1></div>
+    
+    
+      <!--email-->    
+    <div >
+        <input class="form-control" formControlName="email" placeholder="Enter email" id="email">
+    
+    <div *ngIf="submitted==true && loginForm.get('email').invalid" class="form-group" class="alert alert-danger">
+        <span  style="color: red;" *ngIf="loginForm.get('email').hasError('required')">
+          Email is Required!
+        </span>
+        <span style="color: red;"  *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').hasError('required')">
+          Invalid Email!
+        </span>
+    </div>
+    </div>
+
+        <!--password-->
+    <div class="logindetails">
+        <input type="password" class="form-control" formControlName="password" placeholder="Enter Password" id=password>
+    
+    <div *ngIf="submitted==true && loginForm.get('password').invalid" class="form-group" class="alert alert-danger">
+        <span style="color: red;" *ngIf="loginForm.get('password').hasError('required')" >
+         Please Enter password !
+        </span>
+        <span style="color: red;" *ngIf="loginForm.get('password').hasError('minlength')">
+          password should not contain less than 8 characters !
+        </span>
+        <span style="color: red;" *ngIf="loginForm.get('password').hasError('maxlength')">
+          password exceed more than 16 characters !
+        </span>
+    </div>
+</div>
+        <!--submit-->
+         <span>
+        
+        <button type="submit"  class="button"> <h3>Submit</h3></button><br>
+        <span style="font-family: 'Times New Roman', Times, serif; font-size: medium; " >New User? <a routerLink="/registration">SIGNUP</a></span>
+        </span>
+       
+    </div>
+    </form>
+    </div>
+
+    
+    

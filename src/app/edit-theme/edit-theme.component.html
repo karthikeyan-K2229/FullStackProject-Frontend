@@ -1,0 +1,141 @@
+<!-- <div class="left">
+    <input type="text" class="details" placeholder="Name" name="eventName" id="eventName" [(ngModel)]="bookevent.eventName" >
+
+    <input type="text" class="details" placeholder="Enter applicant name" name="applicantName"id="applicantName"  [(ngModel)]="bookevent.applicantName">
+
+    <input  type="text" class="details" placeholder="Enter applicant address" name="applicantAddress" id="applicantAddress" [(ngModel)]="bookevent.applicantAddress" />
+
+    <input type="tel"   class="details" placeholder="Enter applicant Mobile Number" name="applicantMobileNo" id="applicantMobileNo" [(ngModel)]="bookevent.applicantMobileNo">
+
+    <input type="email" class="details" placeholder="Enter applicant email" name="applicantEmailId"  id="applicantEmailId"[(ngModel)]="bookevent.applicantEmailId" >  
+ 
+    <input type="text" class="details" placeholder="Location" name="eventAddress" id="eventAddress" [(ngModel)]="bookevent.eventAddress">
+    </div>
+    <div class="right">
+
+    <input type="date" class="details" placeholder="Enter the date of the event" name="eventDate" id="eventDate" [(ngModel)]="bookevent.eventDate">
+
+    <input  type="time" class="details" placeholder="Enter the time of the event" name="eventTime" id="eventTime" [(ngModel)]="bookevent.eventTime">
+
+    <input type="number"class="details" placeholder="Enter the number of people" name="noOfPeople" id="noOfPeople" [(ngModel)]="bookevent.noOfPeople" >
+
+
+        <select type="dropdown" class="dropdown"  id="selectFoodCategory" name="selectFoodCategory"[(ngModel)]="bookevent.selectFoodCategory" >
+          <option value="">Select For Category</option>
+          <option value="veg">Veg</option>
+          <option value="non-veg">Non-Veg</option>
+       
+        </select>
+ 
+  <input type="number"class="details" placeholder="Enter the quantity of veg items" name="quantityOfVeg"  id="quantityOfVeg" [(ngModel)]="bookevent.quantityOfVeg"/>
+    
+
+  <input type="number"class="details" placeholder="Enter the quantity of Non veg items" name="quantityOfNonVeg" id="quantityOfNonVeg" [(ngModel)]="bookevent.quantityOfNonVeg"/>
+  </div>
+
+<div class="center">
+  <button  type="submit" id="backEvent" class="backEvent" style="color: rgba(20, 20, 19, 0.863);" routerLink="/viewbooking">Back</button>
+
+  <button  type="submit" id="bookEvent" class="bookEvent" style="color: beige;" (click)="UpdateEvent(bookevent)">Update Event</button>
+</div>
+ -->
+ <form  [formGroup]="editEvent" >
+
+ <div class="left">
+  <input type="text" class="form-control" placeholder="Name" formControlName="eventName" id="eventName" formControlName="eventName"/>
+  <div *ngIf="editEvent.get('eventName').invalid && editEvent.controls.eventName.touched "
+  class="form-group" class="alert alert-danger">
+  <span style="color: red;" *ngIf="editEvent.get('eventName').hasError('required')">Event Name is Required !</span>
+</div>
+<br>
+
+ <input type="text" class="form-control" placeholder="Enter applicant name" formControlName="applicantName"id="applicantName"  formControlName="applicantName"/>
+ <div *ngIf="editEvent.get('applicantName').invalid && editEvent.controls.applicantName.touched "
+ class="form-group" class="alert alert-danger">
+ <span style="color: red;" *ngIf="editEvent.get('applicantName').hasError('required')"> Name is Required !</span>
+</div>
+<br>
+
+<input  type="text" class="form-control" placeholder="Enter applicant address" formControlName="applicantAddress" id="applicantAddress"  formControlName="applicantAddress"/>
+ <div *ngIf="editEvent.get('applicantAddress').invalid && editEvent.controls.applicantAddress.touched "
+ class="form-group" class="alert alert-danger">
+ <span style="color: red;" *ngIf="editEvent.get('applicantAddress').hasError('required')"> Address is Required !</span>
+</div><br>
+
+
+  <input type="tel"   class="form-control" placeholder="Enter applicant Mobile Number" formControlName="applicantMobileNo" id="applicantMobileNo" formControlName="applicantMobileNo"/>
+  <div *ngIf="editEvent.get('applicantMobileNo').invalid && editEvent.controls.applicantMobileNo.touched "
+  class="form-group" class="alert alert-danger">
+  <span style="color: red;" *ngIf="editEvent.get('applicantMobileNo').hasError('required')"> phone number is Required !</span>
+  <span  style="color:red;" *ngIf="editEvent.get('applicantMobileNo').hasError('pattern')">
+    Invalid mobile number!
+  </span>
+ </div><br>
+ 
+ <input   class="form-control" placeholder="Enter applicant email" formControlName="applicantEmailId" id="applicantEmailId"  formControlName="applicantEmailId"/>
+ <div *ngIf="editEvent.get('applicantEmailId').invalid && editEvent.controls.applicantEmailId.touched "
+ class="form-group" class="alert alert-danger">
+ <span style="color: red;" *ngIf="editEvent.get('applicantEmailId').hasError('required')"> email is Required !</span>
+ <span style="color: red;" *ngIf="editEvent.get('applicantEmailId').hasError('pattern')">  Invalid Email !</span>
+</div>
+<br>
+
+
+<input  type="text" class="form-control" placeholder="Location" formControlName="eventAddress" id="eventAddress"  formControlName="eventAddress"/>
+ <div *ngIf="editEvent.get('eventAddress').invalid && editEvent.controls.eventAddress.touched "
+ class="form-group" class="alert alert-danger">
+ <span style="color: red;" *ngIf="editEvent.get('eventAddress').hasError('required')"> location is Required !</span>
+</div><br>
+
+<input  type="date" class="form-control" placeholder="Enter the date of the event" formControlName="eventDate" id="eventDate"  formControlName="eventDate"/>
+ <div *ngIf="editEvent.get('eventDate').invalid && editEvent.controls.eventDate.touched "
+ class="form-group" class="alert alert-danger">
+ <span style="color: red;" *ngIf="editEvent.get('eventDate').hasError('required')"> Date is Required !</span>
+</div><br>
+</div>
+<div class="right">
+
+<input  type="time" class="form-control" placeholder="Enter the time of the event" formControlName="eventTime" id="eventTime"  formControlName="eventTime"/>
+ <div *ngIf="editEvent.get('eventTime').invalid && editEvent.controls.eventTime.touched "
+ class="form-group" class="alert alert-danger">
+ <span style="color: red;" *ngIf="editEvent.get('eventTime').hasError('required')"> Time is Required !</span>
+</div><br>
+
+<input  type="number" class="form-control" placeholder="Enter the number of people" formControlName="noOfPeople" id="noOfPeople"  formControlName="noOfPeople"/>
+ <div *ngIf="editEvent.get('noOfPeople').invalid && editEvent.controls.noOfPeople.touched "
+ class="form-group" class="alert alert-danger">
+ <span style="color: red;" *ngIf="editEvent.get('noOfPeople').hasError('required')"> count is Required !</span>
+</div><br>
+
+<div>
+    
+  <select type="dropdown" class="dropdown"  id="selectFoodCategory" formControlName="selectFoodCategory"formControlName="selectFoodCategory">
+    <option value="">Select For Category</option>
+    <option value="veg">Veg</option>
+    <option value="non-veg">Non-Veg</option>
+ 
+  </select>
+  <div *ngIf="editEvent.get('selectFoodCategory').invalid && editEvent.controls.selectFoodCategory.touched "
+  class="form-group" class="alert alert-danger">
+  <span style="color: red;" *ngIf="editEvent.get('selectFoodCategory').hasError('required')"> food category is Required !</span>
+ </div>
+</div><br>
+
+<input  type="text" class="form-control" placeholder="Enter the quantity of veg items" formControlName="quantityOfVeg" id="quantityOfVeg"  formControlName="quantityOfVeg"/>
+<div *ngIf="editEvent.get('quantityOfVeg').invalid && editEvent.controls.quantityOfVeg.touched "
+class="form-group" class="alert alert-danger">
+<span style="color: red;" *ngIf="editEvent.get('quantityOfVeg').hasError('required')"> quantity of veg items is Required !</span>
+</div><br>
+
+<input  type="text" class="form-control" placeholder="Enter the quantity of nonveg items" formControlName="quantityOfNonVeg" id="quantityOfNonVeg"  formControlName="quantityOfNonVeg"/>
+<div *ngIf="editEvent.get('quantityOfNonVeg').invalid && editEvent.controls.quantityOfNonVeg.touched "
+class="form-group" class="alert alert-danger">
+<span style="color: red;" *ngIf="editEvent.get('quantityOfNonVeg').hasError('required')"> quantity of non veg items is Required !</span>
+</div><br>
+</div>
+<div class="center">
+  <button  type="submit" id="backEvent" class="backEvent" style="color: rgba(20, 20, 19, 0.863);" routerLink="/viewbooking">Back</button>
+
+  <button [ngStyle]="{'background-color' : (editEvent.invalid) ? 'grey':'blue'}"  [disabled]="editEvent.invalid"  type="submit" id="bookEvent" class="bookEvent" style="color: beige;" (click)="UpdateEvent()">Update Event</button>
+</div>
+</form>

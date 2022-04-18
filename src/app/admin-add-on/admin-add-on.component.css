@@ -1,0 +1,106 @@
+body{
+  background-color: #7B93AA;
+  background-image: linear-gradient(rgba(48, 48, 134, 0.5), rgba(172, 172, 167, 0.5)),url('../../assets/image/Bg_admin.jpg');
+  /*position: fixed; */
+  top: 0; 
+  left: 0; 
+    
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+ background-position: center; /* Center the image */
+ background-repeat: no-repeat; /* Do not repeat the image */
+ background-size: cover; /* Resize the background image to cover the entire container */
+ 
+}
+#anchor::after{
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width .3;
+}
+#anchor:hover::after{
+  width: 100%;
+  transition: width .3s;}
+  #bt1{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+    margin-left: 30%;
+    margin-top: 10%;
+  }
+  
+  #bt1:after {
+    content: '+';
+    position: absolute;
+    opacity: 0;  
+    top: 5px;
+    right: -20px;
+    transition: 0.5s;
+  }
+  #bt1:hover{
+    padding-right: 24px;
+    padding-left:8px;
+  }
+  #bt1:hover:after {
+    opacity: 1;
+    right: 10px;
+  }
+  #form-addon{
+    background-color: #dbcfcf9d;
+    margin-left: 30%;
+    margin-top: 5%;
+    padding: 15px;
+    border-radius: 30px;
+    
+  }
+  h1{
+    margin-left: 20%;
+    font-family: Ubuntu;
+   
+  }
+  #input-box{
+    margin-bottom: 10px;
+  }
+  #card{
+    margin-left: 10%;
+    margin-bottom: 30px;
+  }
+  img{
+    border-radius: 30px;
+  }
+  .card{
+    border-radius: 30px;
+height: 300px;
+width: 300px;
+  }
+  html { overflow-y: scroll; overflow-x: hidden; }
+body { position: absolute; }
+.navbar
+{
+    
+width: 1680px;
+height: 70px;
+
+  
+background: #2d1b58;
+border: 1px solid #000000;
+box-sizing: border-box;
+margin-bottom: 50px;
+
+}
+.navbar-nav
+{
+    margin-left: 200px;
+    flex-direction: row;
+}
+.nav-link{
+   font-family:Arial, Helvetica, sans-serif, Georgia, Times, 'Times New Roman', serif;
+    
+    margin-right: 279px;
+    
+   font-size: large;
+}

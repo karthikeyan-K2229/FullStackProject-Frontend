@@ -1,0 +1,25 @@
+.navbar
+{
+    
+width: 1680px;
+height: 70px;
+
+  
+background: #2d1b58;
+border: 1px solid #000000;
+box-sizing: border-box;
+margin-bottom: 50px;
+
+}
+.navbar-nav
+{
+    margin-left: 200px;
+    flex-direction: row;
+}
+.nav-link{
+   font-family:Arial, Helvetica, sans-serif, Georgia, Times, 'Times New Roman', serif;
+    
+    margin-right: 279px;
+    
+   font-size: large;
+}

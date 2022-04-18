@@ -1,0 +1,176 @@
+<body style="background-color: #7B93AA;">
+  
+ 
+   <nav class="navbar" >
+      <ul class="navbar-nav">
+        <li>
+          <a class="nav-link" style="color:aliceblue" routerLink="/displayuer">  User details</a>
+        </li>
+        <li>
+          <a class="nav-link" style="color:aliceblue" routerLink="/addtheme">  Add Theme</a>
+        </li>
+        <li>
+          <a class="nav-link" style="color:aliceblue" routerLink="/adminfood">Add food menu</a>
+        </li>
+        <li>
+            <a class="nav-link" style="color:aliceblue" routerLink="/addonrouter">Add Addon</a>
+          </li>
+        <li>
+          <a class="nav-link"  style="color:aliceblue" routerLink="/login">Logout</a>
+        </li>
+      </ul>
+    </nav>
+      <form [formGroup]="Addstheme"  (ngSubmit)="AddTheme()">
+  <div class="container">
+      
+    <div class="row">
+      <div class="col-5">
+        
+            <div class="form-group col-lg-6 " id="input-box">
+                
+                <!--<input type="text" class="form-control input-normal" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black;" placeholder="Enter theme name" id="themeName" name="themeName"[(ngModel)]="addmenu.themeName"/>-->
+
+
+                <input type="text" class="form-control" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black;" placeholder="Enter the theme Name" formControlName="themeName" id="themeName" formControlName="themeName"/>
+        <div *ngIf="Addstheme.get('themeName').invalid && Addstheme.controls.themeName.touched "
+        class="form-group" class="alert alert-danger">
+        <span style="color: red;" *ngIf="Addstheme.get('themeName').hasError('required')">theme Name is Required !</span>
+        <span style="color: red;" *ngIf="Addstheme.get('themeName').hasError('pattern')">Invalid  theme Name!</span>
+      </div>
+            </div>
+            <div class="form-group col-lg-6 " id="input-box">
+                
+                <input type="text" class="form-control" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black;" placeholder="Enter the image url" id="imageUrl" formControlName="imageUrl" formControlName="imageUrl"/>
+                <div *ngIf="Addstheme.get('imageUrl').invalid && Addstheme.controls.imageUrl.touched "
+                class="form-group" class="alert alert-danger">
+                <span style="color: red;" *ngIf="Addstheme.get('imageUrl').hasError('required')">ImageUrl is Required !</span>
+              </div>
+              </div>
+            <div class="form-group col-lg-6 " id="input-box">
+                
+                <input type="text" class="form-control" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black;" placeholder="Enter  photograher Details" id="photographerDetails" formControlName="photographerDetails" formControlName="photographerDetails"/>
+                <div *ngIf="Addstheme.get('photographerDetails').invalid && Addstheme.controls.photographerDetails.touched "
+                class="form-group" class="alert alert-danger">
+                <span style="color: red;" *ngIf="Addstheme.get('photographerDetails').hasError('required')">photographer Details is Required !</span>
+                <span style="color: red;" *ngIf="Addstheme.get('photographerDetails').hasError('pattern')">Invalid  photographerDetails!</span>
+              </div>
+              </div>
+            <div class="form-group " id="input-box">
+                
+                <img src="../assets/image/Admin_page(1).jpg" class="img-thumbnail" alt="image"/>
+            </div>
+    
+        
+      </div>
+      <div class="col-6">
+        
+        <div class="form-group col-lg-6 " id="input-box">
+                
+            <input type="text" class="form-control" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black;" placeholder="Enter videograher Details"  id="videographerDetails" formControlName="videographerDetails" />
+            <div *ngIf="Addstheme.get('videographerDetails').invalid && Addstheme.controls.videographerDetails.touched "
+            class="form-group" class="alert alert-danger">
+            <span style="color: red;" *ngIf="Addstheme.get('videographerDetails').hasError('required')">videographer Details  is Required !</span>
+            <span style="color: red;" *ngIf="Addstheme.get('videographerDetails').hasError('pattern')">Invalid videographer Details  !</span>
+          </div>
+        </div>
+        <div class="form-group col-lg-6 " id="input-box">
+            
+            <input type="text" class="form-control" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black;" placeholder="Enter theme return gift" id="returnGift" formControlName="returnGift" />
+            <div *ngIf="Addstheme.get('returnGift').invalid && Addstheme.controls.returnGift.touched "
+            class="form-group" class="alert alert-danger">
+            <span style="color: red;" *ngIf="Addstheme.get('returnGift').hasError('required')">returnGift Details  is Required !</span>
+            <span style="color: red;" *ngIf="Addstheme.get('returnGift').hasError('pattern')">Invalid returnGift Details!</span>
+
+          </div>
+          </div>
+        <div class="form-group col-lg-6 " id="input-box">
+            
+            <input type="text" class="form-control" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black;" placeholder="Enter theme cost" id="themeCost" formControlName="themeCost"/>
+            <div *ngIf="Addstheme.get('themeCost').invalid && Addstheme.controls.themeCost.touched "
+            class="form-group" class="alert alert-danger">
+            <span style="color: red;" *ngIf="Addstheme.get('themeCost').hasError('required')">theme cost  is Required !</span>
+            <span style="color: red;" *ngIf="Addstheme.get('themeCost').hasError('pattern')">invalid theme cost !</span>
+
+          </div>
+          </div>
+        <div class="form-group col-lg-6 " id="input-box">
+            
+            <input type="text" class="form-control" style="border-radius: 10px;background-color: #d3d8e2; font-family: 'Ubuntu'; color: black; height: 147px;" placeholder="Enter theme description" id="themeDiscription" formControlName="themeDiscription" />
+            <div *ngIf="Addstheme.get('themeDiscription').invalid && Addstheme.controls.themeDiscription.touched "
+            class="form-group" class="alert alert-danger">
+            <span style="color: red;" *ngIf="Addstheme.get('themeDiscription').hasError('required')">Theme Discription Details  is Required !</span>
+            <span style="color: red;" *ngIf="Addstheme.get('themeDiscription').hasError('pattern')">invalid Theme Discription Details!</span>
+
+          </div>
+        </div>
+
+    
+        
+      </div>
+      <div class="col">
+        
+        <div class="form-group " id="rightpic">
+                
+            <img src="../assets/image/Admin_page(2).jpg" class="img-thumbnail"  alt="image"/>
+
+        </div>
+    </div>
+    
+    </div>
+ 
+  </div>
+
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end" >
+    <button [disabled]="Addstheme.invalid" class="btn btn-primary me-md-2" type="submit" style="background: linear-gradient(to right, rgba(11, 11, 88, 0.925) , rgba(17, 13, 80, 0.493) );font-family:Ubuntu; color: white;border-radius: 20px;" id="bt1">Add Theme</button>
+
+  </div>
+</form><br><br><br>
+<table  class="table table-striped">
+  <thead>
+    <tr>
+      <th>themeName</th>
+      <th>imageUrl</th>
+      <th>photographer Details</th>
+      <th>videographerDetails</th>
+      <th>ThemeCost</th>
+      <th>Return Gift</th>
+     
+      <th>themeDiscription</th>
+     
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr *ngFor="let user of themes">
+      <td><b>{{ user.themeName }}</b></td>
+      <!--<td>{{ user.id }}</td>-->
+      <td><img
+        src={{user.imageUrl}} 
+        class="image"
+        alt="..."/></td>
+       
+      <td><b>{{ user.photographerDetails }}</b></td>
+      <td><b>{{ user.videographerDetails }}</b></td>
+      <td><b>{{ user.themeCost }}</b></td>
+      <td><b>{{ user.themeDiscription }}</b></td>
+      <td><b>{{ user.returnGift }}</b></td>
+      
+      
+      <td>
+        <button (click)="updateUser(user.themeid)" class="btn btn-info">
+          Update
+        </button>
+        <button
+          (click)="deleteUser(user.themeid)"
+          class="btn btn-danger"
+          style="margin: left 10px;"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>

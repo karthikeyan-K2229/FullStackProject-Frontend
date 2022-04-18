@@ -1,0 +1,110 @@
+.navbar
+{
+    
+width: 1680px;
+height: 70px;
+
+  
+background: #2d1b58;
+border: 1px solid #000000;
+box-sizing: border-box;
+margin-bottom: 50px;
+
+}
+.navbar-nav
+{
+    margin-left: 200px;
+    flex-direction: row;
+}
+.nav-link{
+   font-family:Arial, Helvetica, sans-serif, Georgia, Times, 'Times New Roman', serif;
+    
+    margin-right: 279px;
+    
+   font-size: large;
+}
+
+
+.buttonfood{
+    padding: 20px;
+    height: 30px;
+    width: 100px;
+    background-color: #2d1b58;
+    align-items: center;
+    justify-content: center;
+    margin-left: 660px;
+    margin-top: 100px;
+}
+#input-box{
+    margin-bottom: 10px;
+    margin-top: 30px;
+    border-radius: 15px;
+   
+    height: 40px;
+    width: 400px;
+    margin-left: 550px;
+}
+.login
+{
+    margin: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e7e8f3;
+    height: 610px;
+    width: 450px;
+    border-color: black;
+    margin-left: 620px;
+   border-radius: 70px;
+
+    }
+    .form-control
+{
+    background-color: rgb(241, 252, 248);
+    padding: 9px;
+    margin-bottom: 15px;
+    border: 1.5px rgb(250, 242, 242) solid;
+    width: 350px;
+    border-radius: 10px;
+    font-size: medium;
+    font-style: normal;
+    margin-top: 5px;
+    border-color: black;
+   
+}
+.image
+{
+    height: 80px;
+    width: 80px;
+}
+.dropdown
+{
+    background-color: rgb(241, 252, 248);
+    height: 45px;
+    
+    border: 1.5px rgb(250, 242, 242) solid;
+    width: 350px;
+    border-radius: 10px;
+    font-size: medium;
+    font-style: normal;
+    margin-top: 5px;
+    border-color: black;
+    margin-bottom: 15px;
+    
+}
+body{
+    background-color: #7B93AA;
+    background-image: linear-gradient(rgba(48, 48, 134, 0.5), rgba(172, 172, 167, 0.5)),url('../../assets/image/Bg_admin.jpg');
+    /*position: fixed; */
+    top: 0; 
+    left: 0; 
+      
+    /* Preserve aspet ratio */
+    min-width: 100%;
+    min-height: 100%;
+   background-position: center; /* Center the image */
+   background-repeat: no-repeat; /* Do not repeat the image */
+   background-size: cover; /* Resize the background image to cover the entire container */
+   
+  }

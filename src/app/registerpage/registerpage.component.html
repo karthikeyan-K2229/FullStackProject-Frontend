@@ -1,0 +1,112 @@
+<div class="Main">
+  <form [formGroup]="RegisterForm" (ngSubmit)="userRegister()">
+    <div class="register">
+      <div class="text">
+        <h1>Register</h1>
+      </div>
+
+      <!--usertype-->
+
+      <div>
+        <select formControlName="usertype" class="dropdown" formControlname="usertype" id="usertype">
+          <option value="">Select User Type</option>
+          <option value="Admin">Admin</option>
+          <option value="User">User</option>
+
+        </select>
+
+        <div *ngIf="RegisterForm.get('usertype').invalid && RegisterForm.controls.usertype.touched "
+          class="form-group" class="alert alert-danger">
+          <span style="color: red;" *ngIf="RegisterForm.get('usertype').hasError('required')">User Type is Required !</span>
+        </div>
+      </div>
+      <!--email-->
+      <div>
+        <input class="form-control" formControlName="email" placeholder="Enter email" id="email">
+
+        <div *ngIf="RegisterForm.get('email').invalid && RegisterForm.controls.email.touched" class="form-group"
+          class="alert alert-danger">
+          <span style="color: red;" *ngIf="RegisterForm.get('email').hasError('required')">
+            Email is Required!
+          </span>
+          <span style="color: red;"
+            *ngIf="RegisterForm.get('email').hasError('email') && !RegisterForm.get('email').hasError('required')">
+            Invalid Email!
+          </span>
+        </div>
+      </div>
+      <!--username-->
+      <div>
+        <input class="form-control" formControlName="name" placeholder="Enter Username" id="name">
+
+        <div *ngIf="RegisterForm.get('name').invalid && RegisterForm.controls.name.touched" class="form-group"
+          class="alert alert-danger">
+          <span style="color: red;" *ngIf="RegisterForm.get('name').hasError('required')">Name is Required !</span>
+          <span *ngIf="RegisterForm.get('name').hasError('pattern')">
+            Enter a valid name!
+          </span>
+        </div>
+      </div>
+      <!--phonenumber-->
+      <div>
+        <input class="form-control" formControlName="phone" placeholder="Enter Mobile Number" id="phone">
+
+        <div style="color: red;" *ngIf="RegisterForm.get('phone').invalid && RegisterForm.controls.phone.touched"
+          class="form-group" class="alert alert-danger">
+          <span *ngIf="RegisterForm.get('phone').hasError('required')">
+            Mobile Number is Required !
+          </span>
+          <span *ngIf="RegisterForm.get('phone').hasError('pattern')">
+            Invalid mobile number!
+          </span>
+        </div>
+      </div>
+      <!--password-->
+      <div>
+        <input class="form-control" type="password" formControlName="password" id="password" placeholder="Password">
+
+        <div *ngIf="RegisterForm.get('password').invalid  && RegisterForm.controls.password.touched" class="form-group"
+          class="alert alert-danger">
+          <span style="color: red;" *ngIf="RegisterForm.get('password').hasError('required')">
+             Enter password !
+          </span>
+          <span style="color: red;" *ngIf="RegisterForm.get('password').hasError('minlength')">
+            password should not contain less than 8 characters !
+          </span>
+
+          <span style="color: red;" *ngIf="RegisterForm.get('password').hasError('maxlength')">
+            password exceed more than 16 characters !
+          </span>
+        </div>
+      </div>
+      <!--confirmpassword-->
+      <div>
+        <input class="form-control" type="password" formControlName="cpassword" id="cpassword"
+          placeholder="Confirm Password">
+
+        <div style="color: red;"
+          *ngIf="RegisterForm.get('cpassword').hasError('required')  && RegisterForm.controls.cpassword.touched"
+          class="alert alert-danger">
+          <span *ngIf="RegisterForm.get('cpassword').hasError('required')">
+             Re-enter your password !
+          </span>
+        </div>
+        <div style="color: red;" *ngIf="RegisterForm.get('cpassword').hasError('notEquivalent') && RegisterForm.controls.cpassword.touched"
+          class="alert alert-danger">
+          Passwords dont match
+        </div>
+      </div>
+      <!--submit-->
+      <span>
+
+        
+        <button type="submit" class="button"[disabled]="RegisterForm.invalid">
+          <h3>Submit</h3>
+        </button><br>
+        <span style="font-family: 'Times New Roman', Times, serif; font-size: medium; ">Already a user? <a
+            routerLink="/login">LOGIN</a></span>
+      </span>
+
+    </div>
+  </form>
+</div>

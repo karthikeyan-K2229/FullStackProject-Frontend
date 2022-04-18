@@ -1,0 +1,110 @@
+.Main
+{
+    height: 100vh;
+    width: 100vw;
+    background-image:url('src/assets/image/loginbackground.jpg');
+   
+    display: flex;
+    min-width:100%;
+    min-height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+}
+.text
+{
+    margin-bottom: 20px;
+}
+.login
+{
+    margin: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e7e8f3;
+    height: 550px;
+    width: 450px;
+    border-color: black;
+    margin-left: 620px;
+   border-radius: 70px;
+
+    
+    
+
+    }
+.form-control
+{
+    background-color: rgb(241, 252, 248);
+    padding: 9px;
+    margin-bottom: 15px;
+    border: 1.5px rgb(250, 242, 242) solid;
+    width: 300px;
+    border-radius: 10px;
+    font-size: medium;
+    font-style: normal;
+    margin-top: 5px;
+    border-color: black;
+   
+}
+
+
+.button {
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    --color: #0f093f;
+    padding: 7px;
+    background-color: transparent;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: rgb(19, 12, 12);
+    z-index: 1;
+   }
+   
+   .button::before, .button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: 1s ease;
+   }
+   
+   .button::before {
+    top: -1em;
+    left: -1em;
+   }
+   
+   .button::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+   }
+   
+   .button:hover::before, .button:hover::after {
+    height: 410px;
+    width: 410px;
+   }
+   
+   .button:hover {
+    color: rgb(34, 72, 194);
+   }
+   
+   .button:active {
+    filter: brightness(.8);
+   }
+   
